@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Copy package files and install deps
 COPY package*.json ./
-RUN npm ci
+RUN npm install   # ← replace npm ci with npm install
 
 # Copy source and build Angular app
 COPY . .
@@ -13,12 +13,6 @@ RUN npm run build --configuration=production --output-path=dist/app
 
 # ---------- Stage 2: Nginx Server ----------
 FROM nginx:1.25-alpine
-
-# Copy built files to Nginx
 COPY --from=build /app/dist/app /usr/share/nginx/html
-
-# Optional: custom nginx config
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -1,6 +1,6 @@
 # Stage 1: Build Angular app
 FROM node:18 AS build
-WORKDIR /app
+WORKDIR /app 
 
 # Copy package files and install dependencies
 COPY package*.json ./

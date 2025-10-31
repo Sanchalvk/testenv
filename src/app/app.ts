@@ -14,7 +14,8 @@ import { Observable } from 'rxjs';
 export class App {
   protected title = 'TestEnv';
   private testURL =
-    import.meta.env['NG_APP_URL'] || "'https://task.thingsrms.com/v1"; // read from assest/config.json replace->['NG_APP_URL'] 
+    import.meta.env['NG_APP_URL'] || "'https://task.thingsrms.com/v1";  
+// /read from assest/config.json replace->['NG_APP_URL'] 
   data: any = null;
   constructor(private http: HttpClient) {}
 

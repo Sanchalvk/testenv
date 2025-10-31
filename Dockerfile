@@ -1,6 +1,6 @@
 # ---------- Stage 1: Build Angular App ----------
 FROM node:20 AS build
-#ENV NG_APP_URL
+ENV NG_APP_URL="https://dummyjson.com/products/1"
 WORKDIR /app
 
 COPY package*.json ./
